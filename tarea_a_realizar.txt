@@ -1,0 +1,5 @@
+1. comunicarte con la planilla de google sheet que se encuentra en drive
+2. Transformar se archivo de google drive en un df
+3. transformar ese df en un archivo de eexcel
+4. guardar ese archivo de excel en google drive
+5. notificar al usuario que el archivo a sido creado por correo
