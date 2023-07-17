@@ -1,5 +1,6 @@
 from google.oauth2.credentials import Credentials
 from googleapiclient.discovery import build
+from parser.config_parsers import Config
 
 class Drive_controllers:
     
@@ -16,7 +17,8 @@ class Drive_controllers:
             #crear cliente de API GOOGLE DRVE
             drive_serivice = build('drive', 'v3', credentials=creds)
             #......... necesito pasarle la id folder en un archivo .ini
-            folder_id = '1FgGJxmbnGBsq1p7qChpZp9uDnwnjOL1t'
+            config = Config().config_parser()
+            folder_id = config["id_folder"]
             result = drive_serivice.files().list(q=f"'{folder_id}' in parents").execute()
             files = result.get('files', [])
 
